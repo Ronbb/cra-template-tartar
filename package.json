@@ -1,0 +1,14 @@
+{
+  "name": "cra-template-tartar",
+  "version": "1.0.2",
+  "author": "Ronbb",
+  "license": "MIT",
+  "main": "template.json",
+  "engines": {
+    "node": ">=8"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ]
+}
