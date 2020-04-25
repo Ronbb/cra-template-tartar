@@ -1,16 +1,23 @@
 {
   "name": "cra-template-tartar",
   "version": "1.0.3",
+  "private": false,
   "author": {
     "name": "Ronbb",
-    "email": "ronbiaobiao@gmail.com"
+    "email": "ronbiaobiao@gmail.com",
+    "url": "https://github.com/Ronbb"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ronbb/cra-template-tartar.git"
+    "url": "git+https://github.com/Ronbb/cra-template-tartar.git"
   },
   "homepage": "https://github.com/Ronbb/cra-template-tartar",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "cra",
+    "template"
+  ],
   "main": "template.json",
   "engines": {
     "node": ">=8"
