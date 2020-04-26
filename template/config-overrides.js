@@ -23,9 +23,13 @@ module.exports = {
       javascriptEnabled: true,
       modifyVars: { '@primary-color': '#37a6fd' }
     }),
-    addBundleVisualizer({
+    addBundleVisualizer(
+      {
       analyzerMode: 'static',
       reportFilename: path.resolve(__dirname, 'out/report.html')
+      },
+      true
+    ),
     })
   ),
   devServer: overrideDevServer(watchAll())
