@@ -6,9 +6,11 @@ const {
   useEslintRc,
   addLessLoader,
   watchAll,
-  addBundleVisualizer
+  addBundleVisualizer,
+  addWebpackPlugin
 } = require('customize-cra')
 const path = require('path')
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
 
 module.exports = {
   webpack: override(
@@ -25,12 +27,16 @@ module.exports = {
     }),
     addBundleVisualizer(
       {
-      analyzerMode: 'static',
-      reportFilename: path.resolve(__dirname, 'out/report.html')
+        analyzerMode: 'static',
+        reportFilename: path.resolve(__dirname, 'out/report.html')
       },
       true
     ),
-    })
+    addWebpackPlugin(
+      new AntdDayjsWebpackPlugin({
+        replaceMoment: true
+      })
+    )
   ),
   devServer: overrideDevServer(watchAll())
 }
