@@ -1,0 +1,63 @@
+{
+  "plugins": ["import", "react", "prettier"],
+
+  "extends": ["airbnb", "react-app", "prettier"],
+
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+      }
+    }
+  },
+
+  "rules": {
+    "arrow-parens": ["warn", "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "eol-last": "warn",
+    "import/extensions": [
+      "warn",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": { "multiline": true },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": { "multiline": true, "minProperties": 6 }
+      }
+    ],
+    "spaced-comment": ["error", "always", { "markers": ["/"] }],
+    "react/jsx-one-expression-per-line": "off",
+    "linebreak-style": "off",
+    "no-invalid-this": "warn",
+    "no-param-reassign": ["error", { "props": false }],
+    "prettier/prettier": "warn",
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "allowTemplateLiterals": false,
+        "avoidEscape": true
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      "warn",
+      {
+        "maximum": 8
+      }
+    ],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".tsx"] }],
+    "react/no-did-mount-set-state": "error",
+    "react/no-did-update-set-state": "error",
+    "react/prefer-es6-class": ["error", "always"],
+    "react/prefer-stateless-function": "off",
+    "semi": ["error", "never"]
+  }
+}
