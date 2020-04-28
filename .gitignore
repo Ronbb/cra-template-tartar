@@ -3,3 +3,5 @@
 .DS_Store
 
 yarn-error.log*
+template/.eslintcache
+template/.stylelintcache
