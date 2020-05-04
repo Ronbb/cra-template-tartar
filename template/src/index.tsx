@@ -1,12 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import configureStore from './redux/store'
 import './index.less'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
+const store = configureStore()
+
+class Root extends React.PureComponent {
+  render() {
+    return (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    )
+  }
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Root />
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -16,4 +30,4 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister()
 
-export default App
+export default Root
