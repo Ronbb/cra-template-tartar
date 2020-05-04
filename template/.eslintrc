@@ -1,7 +1,7 @@
 {
-  "plugins": ["import", "react", "prettier"],
+  "plugins": ["import", "react"],
 
-  "extends": ["airbnb", "react-app", "prettier"],
+  "extends": ["airbnb", "react-app"],
 
   "settings": {
     "import/resolver": {
@@ -10,6 +10,36 @@
       }
     }
   },
+
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "jsx": true
+        },
+
+        "warnOnUnsupportedTypeScriptVersion": true
+      },
+      "plugins": ["@typescript-eslint"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "rules": {
+        "@typescript-eslint/member-delimiter-style": [
+          "warn",
+          {
+            "multiline": {
+              "delimiter": "none"
+            }
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "react/jsx-wrap-multilines": "warn"
+      }
+    }
+  ],
 
   "rules": {
     "arrow-parens": ["warn", "as-needed"],
@@ -24,21 +54,13 @@
         "tsx": "never"
       }
     ],
-    "object-curly-newline": [
-      "error",
-      {
-        "ObjectExpression": "always",
-        "ObjectPattern": { "multiline": true },
-        "ImportDeclaration": "never",
-        "ExportDeclaration": { "multiline": true, "minProperties": 6 }
-      }
-    ],
+    "import/prefer-default-export": "warn",
+    "object-curly-newline": "off",
     "spaced-comment": ["error", "always", { "markers": ["/"] }],
     "react/jsx-one-expression-per-line": "off",
     "linebreak-style": "off",
-    "no-invalid-this": "warn",
+    "no-undef": "error",
     "no-param-reassign": ["error", { "props": false }],
-    "prettier/prettier": "warn",
     "quotes": [
       "warn",
       "single",
@@ -58,6 +80,18 @@
     "react/no-did-update-set-state": "error",
     "react/prefer-es6-class": ["error", "always"],
     "react/prefer-stateless-function": "off",
+    "react/jsx-wrap-multilines": [
+      "warn",
+      {
+        "declaration": "parens",
+        "assignment": "parens",
+        "return": "parens",
+        "arrow": "parens",
+        "condition": "ignore",
+        "logical": "ignore",
+        "prop": "ignore"
+      }
+    ],
     "semi": ["error", "never"]
   }
 }
